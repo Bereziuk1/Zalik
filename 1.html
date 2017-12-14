@@ -1,0 +1,89 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+	<title>Калькулятор</title>
+
+<style type="text/css">
+body{
+background:silver;
+
+}
+	table {
+    border: solid 10px black; 
+	
+	background-color: aqua; 
+	width: 200px; 
+	height: 250px;
+	border-spacing: 10px;
+	
+}
+	
+	table tr,td{
+	border-spacing:5px;
+	width: 100px; 
+	height: 50px;
+	cursor:pointer;
+}
+	th{
+		width: 140px; 
+		text-align: right;
+	}
+</style>
+<script type="text/javascript">
+var number ;
+	var symbol ;
+	var input = ' ';
+	var result = ' ' ;
+	function getnumber(number){
+		if (number == 'c') {
+			number = ' ' ;
+			input = ' ';
+			result = 0 ;
+		}
+		if (number == '=') {
+			result = eval(input) ;
+			input = input + number+ result ;
+		}
+		else (input = input + number) ;
+		document.getElementById("output").innerHTML =input;
+	}
+</script>
+</head>
+
+<body>
+<div class="mytable">
+	<center><table>
+	<tr>
+	<td>
+	<th id="output" ></th>
+	</td>
+	</tr>
+	<tr>
+			<td onclick="getnumber(1)">1
+			<td onclick="getnumber(2)">2
+			<td onclick="getnumber(3)">3
+			<td onclick="getnumber('+')">+
+		</tr>
+		<tr>
+			<td onclick="getnumber(4)">4
+			<td onclick="getnumber(5)">5
+			<td onclick="getnumber(6)">6
+			<td onclick="getnumber('-')">-
+		</tr>
+		<tr>
+			<td onclick="getnumber(7)">7
+			<td onclick="getnumber(8)">8
+			<td onclick="getnumber(9)">9
+			<td onclick="getnumber('*')">*
+		</tr>
+		<tr>
+			<td onclick="getnumber('c')">C
+			<td onclick="getnumber(0)">0
+			<td onclick="getnumber('=')">=
+			<td onclick="getnumber('/')">/</td>
+		</tr>
+		</tr>
+		</table></center>
+	</div>
+</body>
+</html>
